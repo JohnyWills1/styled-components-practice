@@ -1,15 +1,16 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import Link from 'next/link';
+import Card from '../components/Card/Card';
+import { Container } from '../components/Container/Container';
+import { useTheme } from '../context/ThemeContext';
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+const Index = () => {
+  const { theme } = useTheme();
 
-export default IndexPage
+  return (
+    <Container theme={theme}>
+      <Card></Card>
+    </Container>
+  );
+};
+
+export default Index;
